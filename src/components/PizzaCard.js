@@ -64,7 +64,7 @@ class PizzaCard extends Component {
         />
         <CardMedia
           className={classes.media}
-          image="/static/images/cards/paella.jpg"
+          image={this.props.img}
           title="Paella dish"
         />
         <CardContent>
