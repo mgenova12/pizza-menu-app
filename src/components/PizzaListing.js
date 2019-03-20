@@ -1,19 +1,40 @@
 import React, { Component } from 'react';
-import PizzaTable from './PizzaTable'
+import { Link } from "react-router-dom";
 
+import PizzaCard from './PizzaCard'
+
+import Grid from '@material-ui/core/Grid';
+import Grow from '@material-ui/core/Grow';
 import Typography from '@material-ui/core/Typography';
 
-export class PizzaListing extends Component {
+
+class PizzaListing extends Component {
 
   render() {
     return (
-      <div>
+        <div>
+          <Typography variant="h2" align="center">Choose Your Favorite Pizza</Typography>
 
-		<Typography variant="h2" align="center">Choose Your Favorite Pizza</Typography>
+          <Grid container spacing={24}>
+          	{this.props.pizzas.map(pizza => 
+              <Grow key={pizza.id} in={true}>
+                <Grid item md={3}>
 
-      	<PizzaTable/>
+                  <Link to={`/${pizza.id}`}>          
+                		<PizzaCard 
+                      id={pizza.id}
+                      name={pizza.name} 
+                      description={pizza.description} 
+                      img={pizza.image}
+                    />
+                  </Link>
 
-      </div>
+                </Grid>
+              </Grow>
+            )}
+          </Grid>
+
+        </div>
     );
   }
 }
