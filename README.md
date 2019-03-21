@@ -4,7 +4,7 @@ Pizza Menu App is a Single Page Appliaction online menu for a fictional pizzeria
 
 # Motivation
   
-  This app takes the traditional menu and makes it interactive and fun to view.
+  This app takes the traditional menu and makes it interactive and fun to view. I decided to choose a simplistic design to display each image and title. The ability to expand click makes it easier for the user to view the description of each pizza. Users can also navigate to each individual pizza page for more information about that specific product.  
 
 # Tech
 
@@ -24,16 +24,16 @@ Pizza Menu App uses a number of open source projects to work properly:
 * Each Pizza has its own unique discription page
 * Exapand click description for each pizza
 * Ability to favorite pizzas
-
+* Responsive Grid System
 
 
 # Code Example
 
 **Using React Router To Render Component Based on ID**
 ```javascript
-          <Route path="/:id" render={(props) => (
-            <PizzaDescription pizza={Pizzas.find(pizza => pizza.id === parseInt(props.match.params.id))}/>
-          )}/> 
+      <Route path="/:id" render={(props) => (
+        <PizzaDescription pizza={Pizzas.find(pizza => pizza.id === parseInt(props.match.params.id))}/>
+      )}/> 
 ```
 
 

@@ -70,20 +70,20 @@ class PizzaCard extends Component {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={this.props.name}
+            title={this.props.pizza.name}
           />
             <CardMedia 
               className={classes.media}
-              image={this.props.img}
-              title={this.props.name}
+              image={this.props.pizza.image}
+              title={this.props.pizza.name}
             />
 
           <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">  
-              <FavoriteIcon 
-                style={{color: this.state.favorited ? 'red' : ''}} 
-                onClick={(e) => {this.handleFavoriteClick(e)}}
-                />
+            <IconButton 
+              aria-label="Add to favorites" 
+              onClick={(e) => {this.handleFavoriteClick(e)}}
+            >
+              <FavoriteIcon style={{color: this.state.favorited ? 'red' : ''}} />
             </IconButton>
             <IconButton aria-label="Share">
               <ShareIcon />
@@ -99,7 +99,7 @@ class PizzaCard extends Component {
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>
-                {this.props.description}
+                {this.props.pizza.description}
               </Typography>
             </CardContent>
           </Collapse>
@@ -111,6 +111,7 @@ class PizzaCard extends Component {
 
 PizzaCard.propTypes = {
   classes: PropTypes.object.isRequired,
+  pizza: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(PizzaCard);

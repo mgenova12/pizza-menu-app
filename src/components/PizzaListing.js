@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 import PizzaCard from './PizzaCard'
 
@@ -15,17 +16,14 @@ class PizzaListing extends Component {
         <div>
           <Typography variant="h2" align="center">Choose Your Favorite Pizza</Typography>
 
-          <Grid container spacing={24}>
+          <Grid container spacing={24} justify="center" >
           	{this.props.pizzas.map(pizza => 
               <Grow key={pizza.id} in={true}>
-                <Grid item md={3}>
+                <Grid item xs={6} sm={3}>
 
                   <Link to={`/${pizza.id}`} style={{ textDecoration: 'none' }}>          
                 		<PizzaCard
-                      id={pizza.id}
-                      name={pizza.name} 
-                      description={pizza.description} 
-                      img={pizza.image}
+                      pizza={pizza}
                     />
                   </Link>
 
@@ -38,5 +36,9 @@ class PizzaListing extends Component {
     );
   }
 }
+
+PizzaListing.propTypes = {
+  pizzas: PropTypes.array.isRequired,
+};
 
 export default PizzaListing;
