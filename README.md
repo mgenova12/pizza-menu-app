@@ -16,7 +16,7 @@ Pizza Menu App uses a number of open source projects to work properly:
 
 # Screenshots
 
-![alt text]()
+![alt text](https://raw.githack.com/mgenova12/pizza-menu-app/master/src/imgs/pizza-menu-ss.jpg)
 
 # Features
 
