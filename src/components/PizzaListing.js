@@ -20,8 +20,8 @@ class PizzaListing extends Component {
               <Grow key={pizza.id} in={true}>
                 <Grid item md={3}>
 
-                  <Link to={`/${pizza.id}`}>          
-                		<PizzaCard 
+                  <Link to={`/${pizza.id}`} style={{ textDecoration: 'none' }}>          
+                		<PizzaCard
                       id={pizza.id}
                       name={pizza.name} 
                       description={pizza.description} 

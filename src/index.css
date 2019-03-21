@@ -12,3 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body:before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  
+  background-image: url("https://i.pinimg.com/736x/e5/f3/4b/e5f34b92c07c5660ebcc3de7a3bf3d67--pizza-stuff-wallpaper-backgrounds.jpg");
+  width: 100%;
+  height: 100%;
+  
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}

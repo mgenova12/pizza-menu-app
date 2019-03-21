@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-// import PizzaDescription from './PizzaDescription'
-
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -22,6 +21,8 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 const styles = theme => ({
   card: {
     maxWidth: 400,
+    border: 'thin solid black',
+    backgroundColor: '#fffff4',
   },
   media: {
     height: 0,
@@ -46,12 +47,20 @@ const styles = theme => ({
 });
 
 class PizzaCard extends Component {
-  state = { expanded: false };
+  state = { 
+    expanded: false,
+    favorited: false
+  };
 
   handleExpandClick = (event) => {
     event.preventDefault()
     this.setState(state => ({ expanded: !state.expanded }));
   };
+
+  handleFavoriteClick = (event) => {
+    event.preventDefault()
+    this.setState(state => ({ favorited: !state.favorited }));
+  }
 
   render() {
     const { classes } = this.props;
@@ -75,7 +84,10 @@ class PizzaCard extends Component {
 
           <CardActions className={classes.actions} disableActionSpacing>
             <IconButton aria-label="Add to favorites">  
-              <FavoriteIcon />
+              <FavoriteIcon 
+                style={{color: this.state.favorited ? 'red' : ''}} 
+                onClick={(e) => {this.handleFavoriteClick(e)}}
+                />
             </IconButton>
             <IconButton aria-label="Share">
               <ShareIcon />
