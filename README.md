@@ -22,18 +22,18 @@ Pizza Menu App uses a number of open source projects to work properly:
 
 * Listing Page that displays 5 pizzas
 * Each Pizza has its own unique discription page
-* Exapand click description for each pizza
+* Expand click description for each pizza
 * Ability to favorite pizzas
 * Responsive Grid System
 
 
 # Code Example
 
-**Using React Router To Render Component Based on ID**
+**Using React Router To Render Component and pass prop based on ID**
 ```javascript
-      <Route path="/:id" render={(props) => (
-        <PizzaDescription pizza={Pizzas.find(pizza => pizza.id === parseInt(props.match.params.id))}/>
-      )}/> 
+  <Route path="/:id" render={(props) => (
+    <PizzaDescription pizza={Pizzas.find(pizza => pizza.id === parseInt(props.match.params.id))}/>
+  )}/> 
 ```
 
 
