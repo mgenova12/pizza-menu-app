@@ -10,8 +10,8 @@ import Grow from '@material-ui/core/Grow';
 	const styles = {
 	  avatar: {
 	    margin: 40,
-	    width: 200,
-	    height: 200,
+	    width: 250,
+	    height: 250,
 	    border: 'thin solid black',
 	  },
 	  description: {
